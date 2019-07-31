@@ -16,9 +16,6 @@ class CommentCreateSerializer(ModelSerializer):
         return attrs
 
 
-
-
-
 class CommentListSerializer(ModelSerializer):
     replies = SerializerMethodField()
 
@@ -29,3 +26,9 @@ class CommentListSerializer(ModelSerializer):
     def get_replies(self, obj):
         if obj.any_children:
             return CommentListSerializer(obj.children(), many=True).data
+
+
+class CommentDeleteUpdateSerializer(ModelSerializer):
+    class Meta:
+        model = Comment
+        fields = ['content']
