@@ -1,4 +1,4 @@
-from rest_framework.generics import CreateAPIView, ListAPIView, DestroyAPIView, UpdateAPIView
+from rest_framework.generics import CreateAPIView, ListAPIView, DestroyAPIView, UpdateAPIView,RetrieveAPIView
 
 from comment.api.paginations import CommentPagination
 from comment.api.permissions import IsOwner
@@ -33,7 +33,7 @@ class CommentDeleteAPIView(DestroyAPIView):
     permission_classes = [IsOwner]
 
 
-class CommentUpdateAPIView(UpdateAPIView):
+class CommentUpdateAPIView(UpdateAPIView,RetrieveAPIView):
     queryset = Comment.objects.all()
     serializer_class = CommentDeleteUpdateSerializer
     lookup_field = 'pk'
