@@ -1,5 +1,5 @@
-from rest_framework.generics import CreateAPIView, ListAPIView, DestroyAPIView, UpdateAPIView, RetrieveAPIView
-from rest_framework.mixins import UpdateModelMixin, RetrieveModelMixin
+from rest_framework.generics import CreateAPIView, ListAPIView, UpdateAPIView, RetrieveAPIView
+from rest_framework.mixins import DestroyModelMixin
 
 from comment.api.paginations import CommentPagination
 from comment.api.permissions import IsOwner
@@ -27,21 +27,11 @@ class CommentListAPIView(ListAPIView):
         return queryset
 
 
-class CommentDeleteAPIView(DestroyAPIView, UpdateModelMixin, RetrieveModelMixin):
+class CommentUpdateAPIView(UpdateAPIView, RetrieveAPIView, DestroyModelMixin):
     queryset = Comment.objects.all()
     serializer_class = CommentDeleteUpdateSerializer
     lookup_field = 'pk'
     permission_classes = [IsOwner]
 
-    def put(self, request, *args, **kwargs):
-        return self.update(request, *args, **kwargs)
-
-    def get(self, request, *args, **kwargs):
-        return self.retrieve(request, *args, **kwargs)
-
-
-class CommentUpdateAPIView(UpdateAPIView, RetrieveAPIView):
-    queryset = Comment.objects.all()
-    serializer_class = CommentDeleteUpdateSerializer
-    lookup_field = 'pk'
-    permission_classes = [IsOwner]
+    def delete(self, request, *args, **kwargs):
+        return self.destroy(request, *args, **kwargs)

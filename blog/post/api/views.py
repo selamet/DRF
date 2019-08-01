@@ -1,5 +1,6 @@
 from rest_framework.filters import SearchFilter, OrderingFilter
 from rest_framework.generics import ListAPIView, RetrieveAPIView, DestroyAPIView, RetrieveUpdateAPIView, CreateAPIView
+from rest_framework.mixins import CreateModelMixin
 
 from post.api.paginations import PostPagination
 from post.api.serializers import PostSerializer, PostUpdateCreateSeralizer
@@ -9,7 +10,7 @@ from post.api.permissions import IsOwner
 from rest_framework.permissions import IsAuthenticated
 
 
-class PostListAPIView(ListAPIView):
+class PostListAPIView(ListAPIView, CreateModelMixin):
     serializer_class = PostSerializer
     filter_backends = [SearchFilter, OrderingFilter]
     search_fields = ['title', 'content']
@@ -18,6 +19,12 @@ class PostListAPIView(ListAPIView):
     def get_queryset(self):
         queryset = Post.objects.filter(draft=False)
         return queryset
+
+    def post(self, request, *args, **kwargs):
+        return self.create(request, *args, **kwargs)
+
+    def perform_create(self, serializer):
+        serializer.save(user=self.request.user)
 
 
 class PostDetailAPIView(RetrieveAPIView):
