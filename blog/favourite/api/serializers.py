@@ -15,3 +15,9 @@ class FavouriteListCreateAPISerializer(ModelSerializer):
             raise serializers.ValidationError("Favorilere eklendi!!")
 
         return attrs
+
+
+class FavouriteAPISerializer(ModelSerializer):
+    class Meta:
+        model = Favourite
+        fields = ('content',)
