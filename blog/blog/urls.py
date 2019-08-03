@@ -11,6 +11,7 @@ urlpatterns = [
                   path('api/post/', include('post.api.urls', namespace='post')),
                   path('api/comment/', include('comment.api.urls', namespace='comment')),
                   path('api/favourite/', include('favourite.api.urls', namespace='favourite')),
+                  path('api/user/', include('account.api.urls', namespace='account')),
                   path('api/token/', jwt_views.TokenObtainPairView.as_view(), name='token_obtain_pair'),
                   path('api/token/refresh/', jwt_views.TokenRefreshView.as_view(), name='token_refresh'),
 
