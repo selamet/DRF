@@ -33,6 +33,9 @@ REST_FRAMEWORK = {
         'rest_framework_simplejwt.authentication.JWTAuthentication',
         'rest_framework.authentication.SessionAuthentication'
     ],
+    'DEFAULT_THROTTLE_RATES': {
+        'registerthrottle': '5/hour',
+    }
 }
 
 SIMPLE_JWT = {
