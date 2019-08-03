@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'post',
     'comment',
     'favourite',
+    'account',
 
     'rest_framework',
 
