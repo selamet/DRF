@@ -12,6 +12,7 @@ from rest_framework.permissions import IsAuthenticated
 
 class PostListAPIView(ListAPIView):
     serializer_class = PostSerializer
+    throttle_scope = 'fikret'
     filter_backends = [SearchFilter, OrderingFilter]
     search_fields = ['title', 'content']
     pagination_class = PostPagination

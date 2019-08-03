@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5d27ccfe-799e-47aa-a20a-9fb62a44e77e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/account/api/throttles.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/account/api/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/account/api/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,20 +18,29 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/account/api/throttles.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="22" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="22" />
+            <state relative-caret-position="75">
+              <caret line="5" column="29" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/blog/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="343">
+              <caret line="36" column="35" selection-start-line="36" selection-start-column="35" selection-end-line="36" selection-end-column="35" />
+              <folding>
+                <element signature="e#305#314#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/blog/settings.py">
+        <entry file="file://$PROJECT_DIR$/account/api/permissions.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="313">
-              <caret line="34" column="6" lean-forward="true" selection-start-line="34" selection-start-column="6" selection-end-line="34" selection-end-column="6" />
-              <folding>
-                <element signature="e#305#314#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="120">
+              <caret line="8" column="8" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -81,13 +88,13 @@
         <option value="$PROJECT_DIR$/account/admin.py" />
         <option value="$PROJECT_DIR$/account/api/__init__.py" />
         <option value="$PROJECT_DIR$/blog/urls.py" />
-        <option value="$PROJECT_DIR$/blog/settings.py" />
         <option value="$PROJECT_DIR$/account/models.py" />
         <option value="$PROJECT_DIR$/account/api/urls.py" />
         <option value="$PROJECT_DIR$/account/api/serializers.py" />
-        <option value="$PROJECT_DIR$/account/api/permissions.py" />
         <option value="$PROJECT_DIR$/account/api/throttles.py" />
         <option value="$PROJECT_DIR$/account/api/views.py" />
+        <option value="$PROJECT_DIR$/blog/settings.py" />
+        <option value="$PROJECT_DIR$/account/api/permissions.py" />
       </list>
     </option>
   </component>
@@ -210,18 +217,17 @@
       <workItem from="1564685601000" duration="3613000" />
       <workItem from="1564765695684" duration="1077000" />
       <workItem from="1564835436385" duration="3227000" />
-      <workItem from="1564840047565" duration="3344000" />
+      <workItem from="1564840047565" duration="3824000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30221000" />
+    <option name="totallyTimeSpent" value="30701000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2003231" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2003231" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -235,7 +241,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50080776" side_tool="true" weight="0.3068493" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49919224" visible="true" weight="0.26712328" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.49919224" visible="true" weight="0.26712328" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -501,13 +507,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/account/api/permissions.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="36" selection-start-line="5" selection-start-column="36" selection-end-line="5" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/account/api/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -520,18 +519,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/account/api/throttles.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="22" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="22" />
+        <state relative-caret-position="75">
+          <caret line="5" column="29" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="29" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/blog/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
-          <caret line="34" column="6" lean-forward="true" selection-start-line="34" selection-start-column="6" selection-end-line="34" selection-end-column="6" />
+        <state relative-caret-position="343">
+          <caret line="36" column="35" selection-start-line="36" selection-start-column="35" selection-end-line="36" selection-end-column="35" />
           <folding>
             <element signature="e#305#314#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/account/api/permissions.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="8" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
         </state>
       </provider>
     </entry>
