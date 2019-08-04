@@ -17,6 +17,9 @@ class Post(models.Model):
     image = models.ImageField(upload_to='post', null=True)
     modified_by = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, related_name='modified_by')
 
+    class Meta:
+        ordering = ["id"]
+
     def __str__(self):
         return self.title
 

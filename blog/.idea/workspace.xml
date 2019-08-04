@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5d27ccfe-799e-47aa-a20a-9fb62a44e77e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/post/api/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/post/api/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/account/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/account/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/post/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/post/models.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -15,13 +17,37 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/post/api/urls.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="120">
               <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
               <folding>
                 <element signature="e#0#37#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/post/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="130">
+              <caret line="18" lean-forward="true" selection-start-line="17" selection-start-column="24" selection-end-line="18" />
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/account/tests.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="371">
+              <caret line="61" column="35" selection-start-line="61" selection-start-column="35" selection-end-line="61" selection-end-column="35" />
+              <folding>
+                <element signature="e#0#43#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -49,7 +75,6 @@
       <list>
         <option value="$PROJECT_DIR$/post/api/permissions.py" />
         <option value="$PROJECT_DIR$/post/api/paginations.py" />
-        <option value="$PROJECT_DIR$/post/models.py" />
         <option value="$PROJECT_DIR$/post/api/serializers.py" />
         <option value="$PROJECT_DIR$/comment/admin.py" />
         <option value="$PROJECT_DIR$/comment/api/__init__.py" />
@@ -77,6 +102,8 @@
         <option value="$PROJECT_DIR$/post/api/views.py" />
         <option value="$PROJECT_DIR$/blog/settings.py" />
         <option value="$PROJECT_DIR$/post/api/urls.py" />
+        <option value="$PROJECT_DIR$/post/models.py" />
+        <option value="$PROJECT_DIR$/account/tests.py" />
       </list>
     </option>
   </component>
@@ -92,6 +119,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -102,19 +130,12 @@
             <path>
               <item name="blog" type="b2602c69:ProjectViewProjectNode" />
               <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="post" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="post" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="account" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -152,7 +173,87 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Django tests.Test: account.tests.UserRegistrationTestCase.test_user_authenticated_registration">
+    <configuration name="Test: account.tests.UserRegistrationTestCase.test_unique_name" type="DjangoTestsConfigurationType" temporary="true">
+      <module name="blog" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="account.tests.UserRegistrationTestCase.test_unique_name" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test: account.tests.UserRegistrationTestCase.test_user_authenticated_registration" type="DjangoTestsConfigurationType" temporary="true">
+      <module name="blog" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="account.tests.UserRegistrationTestCase.test_user_authenticated_registration" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test: account.tests.UserRegistrationTestCase.test_user_invalid_password" type="DjangoTestsConfigurationType" temporary="true">
+      <module name="blog" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="account.tests.UserRegistrationTestCase.test_user_invalid_password" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test: account.tests.UserRegistrationTestCase.test_user_registration" type="DjangoTestsConfigurationType" temporary="true">
+      <module name="blog" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="account.tests.UserRegistrationTestCase.test_user_registration" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="blog" type="Python.DjangoServer" factoryName="Django server">
       <module name="blog" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -176,6 +277,14 @@
       <option name="customRunCommand" value="" />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Django tests.Test: account.tests.UserRegistrationTestCase.test_user_authenticated_registration" />
+        <item itemvalue="Django tests.Test: account.tests.UserRegistrationTestCase.test_unique_name" />
+        <item itemvalue="Django tests.Test: account.tests.UserRegistrationTestCase.test_user_invalid_password" />
+        <item itemvalue="Django tests.Test: account.tests.UserRegistrationTestCase.test_user_registration" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -194,22 +303,44 @@
       <workItem from="1564685601000" duration="3613000" />
       <workItem from="1564765695684" duration="1077000" />
       <workItem from="1564835436385" duration="3227000" />
-      <workItem from="1564840047565" duration="4811000" />
+      <workItem from="1564840047565" duration="4896000" />
+      <workItem from="1564950701855" duration="868000" />
     </task>
     <servers />
   </component>
+  <component name="TestHistory">
+    <history-entry file="Test__account_tests_UserRegistrationTestCase_test_user_registration - 2019.08.04 at 23h 39m 36s.xml">
+      <configuration name="Test: account.tests.UserRegistrationTestCase.test_user_registration" configurationId="DjangoTestsConfigurationType" />
+    </history-entry>
+    <history-entry file="Test__account_tests_UserRegistrationTestCase_test_user_registration - 2019.08.04 at 23h 40m 54s.xml">
+      <configuration name="Test: account.tests.UserRegistrationTestCase.test_user_registration" configurationId="DjangoTestsConfigurationType" />
+    </history-entry>
+    <history-entry file="Test__account_tests_UserRegistrationTestCase_test_user_invalid_password - 2019.08.04 at 23h 42m 46s.xml">
+      <configuration name="Test: account.tests.UserRegistrationTestCase.test_user_invalid_password" configurationId="DjangoTestsConfigurationType" />
+    </history-entry>
+    <history-entry file="Test__account_tests_UserRegistrationTestCase_test_user_registration - 2019.08.04 at 23h 42m 54s.xml">
+      <configuration name="Test: account.tests.UserRegistrationTestCase.test_user_registration" configurationId="DjangoTestsConfigurationType" />
+    </history-entry>
+    <history-entry file="Test__account_tests_UserRegistrationTestCase_test_user_invalid_password - 2019.08.04 at 23h 43m 22s.xml">
+      <configuration name="Test: account.tests.UserRegistrationTestCase.test_user_invalid_password" configurationId="DjangoTestsConfigurationType" />
+    </history-entry>
+    <history-entry file="Test__account_tests_UserRegistrationTestCase_test_unique_name - 2019.08.04 at 23h 44m 43s.xml">
+      <configuration name="Test: account.tests.UserRegistrationTestCase.test_unique_name" configurationId="DjangoTestsConfigurationType" />
+    </history-entry>
+  </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31688000" />
+    <option name="totallyTimeSpent" value="32641000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2003231" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19628432" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32876712" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -218,7 +349,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50080776" side_tool="true" weight="0.3068493" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.49919224" visible="true" weight="0.26712328" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49919224" weight="0.27671233" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -229,6 +360,12 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/blog$Test__account_tests_UserRegistrationTestCase_test_user_registration.coverage" NAME="Test: account.tests.UserRegistrationTestCase.test_user_registration Coverage Results" MODIFIED="1564951373094" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/blog$Test__account_tests_UserRegistrationTestCase_test_unique_name.coverage" NAME="Test: account.tests.UserRegistrationTestCase.test_unique_name Coverage Results" MODIFIED="1564951481206" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/blog$Test__account_tests_UserRegistrationTestCase_test_user_authenticated_registration.coverage" NAME="Test: account.tests.UserRegistrationTestCase.test_user_authenticated_registration Coverage Results" MODIFIED="1564951657650" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/blog$Test__account_tests_UserRegistrationTestCase_test_user_invalid_password.coverage" NAME="Test: account.tests.UserRegistrationTestCase.test_user_invalid_password Coverage Results" MODIFIED="1564951400101" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/../venv/lib/python3.7/site-packages/rest_framework/serializers.py">
@@ -264,16 +401,6 @@
           <caret line="5" column="27" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/post/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
-          <caret line="39" lean-forward="true" selection-start-line="32" selection-start-column="4" selection-end-line="39" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -520,6 +647,26 @@
           <caret line="8" column="24" selection-start-line="8" selection-start-column="24" selection-end-line="8" selection-end-column="24" />
           <folding>
             <element signature="e#0#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/post/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="18" lean-forward="true" selection-start-line="17" selection-start-column="24" selection-end-line="18" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/account/tests.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="371">
+          <caret line="61" column="35" selection-start-line="61" selection-start-column="35" selection-end-line="61" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
           </folding>
         </state>
       </provider>
