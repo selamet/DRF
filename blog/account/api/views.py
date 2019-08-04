@@ -33,10 +33,7 @@ class UpdatePassword(APIView):
 
     def put(self, request, *args, **kwargs):
         self.object = self.get_object()
-        data = {
-            'old_password': request.data['old_password'],
-            'new_password': request.data['new_password']
-        }
+
         serializer = ChangePasswordSerializer(data=request.data)
         if serializer.is_valid():
             print(serializer.data)
@@ -46,7 +43,7 @@ class UpdatePassword(APIView):
 
             self.object.set_password(serializer.data.get('new_password'))
             self.object.save()
-            update_session_auth_hash(request, self.object) #update sonrası oturumda kalmayı sağlar
+            update_session_auth_hash(request, self.object)  # update sonrası oturumda kalmayı sağlar
             return Response(status=status.HTTP_204_NO_CONTENT)
 
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

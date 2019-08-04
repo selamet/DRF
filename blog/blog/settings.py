@@ -37,7 +37,7 @@ REST_FRAMEWORK = {
         'rest_framework.throttling.ScopedRateThrottle',
     ),
     'DEFAULT_THROTTLE_RATES': {
-        'registerthrottle': '5/hour',
+        'registerthrottle': '15/hour',
         'fikret': '5/hour'
     }
 }
