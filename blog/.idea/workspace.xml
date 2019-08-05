@@ -19,8 +19,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/favourite/tests.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="383">
-              <caret line="34" column="50" selection-start-line="34" selection-start-column="50" selection-end-line="34" selection-end-column="50" />
+            <state relative-caret-position="946">
+              <caret line="99" column="50" selection-start-line="99" selection-start-column="50" selection-end-line="99" selection-end-column="50" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
               </folding>
@@ -31,8 +31,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/favourite/api/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="72" selection-start-line="7" selection-start-column="68" selection-end-line="7" selection-end-column="72" />
+            <state relative-caret-position="120">
+              <caret line="8" column="65" lean-forward="true" selection-start-line="8" selection-start-column="65" selection-end-line="8" selection-end-column="78" />
               <folding>
                 <element signature="e#0#37#0" expanded="true" />
               </folding>
@@ -167,47 +167,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Django tests.Test: favourite.tests.FavouriteCreateList.test_user_fav">
-    <configuration name="Test: account.tests.UserProfileUpdate.test_with_empty_informations" type="DjangoTestsConfigurationType" temporary="true">
-      <module name="blog" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="TARGET" value="account.tests.UserProfileUpdate.test_with_empty_informations" />
-      <option name="SETTINGS_FILE" value="" />
-      <option name="CUSTOM_SETTINGS" value="false" />
-      <option name="USE_OPTIONS" value="false" />
-      <option name="OPTIONS" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Test: favourite.tests.FavouriteCreateList" type="DjangoTestsConfigurationType" temporary="true">
-      <module name="blog" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="TARGET" value="favourite.tests.FavouriteCreateList" />
-      <option name="SETTINGS_FILE" value="" />
-      <option name="CUSTOM_SETTINGS" value="false" />
-      <option name="USE_OPTIONS" value="false" />
-      <option name="OPTIONS" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Django tests.Test: favourite.tests.FavouriteUpdateDelete">
     <configuration name="Test: favourite.tests.FavouriteCreateList.test_add_favourite" type="DjangoTestsConfigurationType" temporary="true">
       <module name="blog" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -228,26 +188,6 @@
       <option name="OPTIONS" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Test: favourite.tests.FavouriteCreateList.test_jwt_authentication" type="DjangoTestsConfigurationType" temporary="true">
-      <module name="blog" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="TARGET" value="favourite.tests.FavouriteCreateList.test_jwt_authentication" />
-      <option name="SETTINGS_FILE" value="" />
-      <option name="CUSTOM_SETTINGS" value="false" />
-      <option name="USE_OPTIONS" value="false" />
-      <option name="OPTIONS" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="Test: favourite.tests.FavouriteCreateList.test_user_fav" type="DjangoTestsConfigurationType" temporary="true">
       <module name="blog" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -262,6 +202,66 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="TARGET" value="favourite.tests.FavouriteCreateList.test_user_fav" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test: favourite.tests.FavouriteUpdateDelete" type="DjangoTestsConfigurationType" temporary="true">
+      <module name="blog" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="favourite.tests.FavouriteUpdateDelete" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test: favourite.tests.FavouriteUpdateDelete.test_fav_delete" type="DjangoTestsConfigurationType" temporary="true">
+      <module name="blog" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="favourite.tests.FavouriteUpdateDelete.test_fav_delete" />
+      <option name="SETTINGS_FILE" value="" />
+      <option name="CUSTOM_SETTINGS" value="false" />
+      <option name="USE_OPTIONS" value="false" />
+      <option name="OPTIONS" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Test: favourite.tests.FavouriteUpdateDelete.test_fav_update" type="DjangoTestsConfigurationType" temporary="true">
+      <module name="blog" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="TARGET" value="favourite.tests.FavouriteUpdateDelete.test_fav_update" />
       <option name="SETTINGS_FILE" value="" />
       <option name="CUSTOM_SETTINGS" value="false" />
       <option name="USE_OPTIONS" value="false" />
@@ -293,11 +293,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Django tests.Test: favourite.tests.FavouriteUpdateDelete" />
+        <item itemvalue="Django tests.Test: favourite.tests.FavouriteUpdateDelete.test_fav_update" />
+        <item itemvalue="Django tests.Test: favourite.tests.FavouriteUpdateDelete.test_fav_delete" />
         <item itemvalue="Django tests.Test: favourite.tests.FavouriteCreateList.test_user_fav" />
         <item itemvalue="Django tests.Test: favourite.tests.FavouriteCreateList.test_add_favourite" />
-        <item itemvalue="Django tests.Test: favourite.tests.FavouriteCreateList" />
-        <item itemvalue="Django tests.Test: favourite.tests.FavouriteCreateList.test_jwt_authentication" />
-        <item itemvalue="Django tests.Test: account.tests.UserProfileUpdate.test_with_empty_informations" />
       </list>
     </recent_temporary>
   </component>
@@ -320,44 +320,44 @@
       <workItem from="1564835436385" duration="3227000" />
       <workItem from="1564840047565" duration="4896000" />
       <workItem from="1564950701855" duration="4571000" />
-      <workItem from="1565007990184" duration="978000" />
+      <workItem from="1565007990184" duration="2363000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Test__account_tests_UserProfileUpdate_test_with_empty_informations - 2019.08.05 at 00h 36m 22s.xml">
-      <configuration name="Test: account.tests.UserProfileUpdate.test_with_empty_informations" configurationId="DjangoTestsConfigurationType" />
+    <history-entry file="Test__favourite_tests_FavouriteCreateList_test_add_favourite - 2019.08.05 at 15h 42m 56s.xml">
+      <configuration name="Test: favourite.tests.FavouriteCreateList.test_add_favourite" configurationId="DjangoTestsConfigurationType" />
     </history-entry>
-    <history-entry file="Test__account_tests_UserProfileUpdate_test_with_empty_informations - 2019.08.05 at 00h 36m 48s.xml">
-      <configuration name="Test: account.tests.UserProfileUpdate.test_with_empty_informations" configurationId="DjangoTestsConfigurationType" />
+    <history-entry file="Test__favourite_tests_FavouriteCreateList_test_add_favourite - 2019.08.05 at 15h 44m 12s.xml">
+      <configuration name="Test: favourite.tests.FavouriteCreateList.test_add_favourite" configurationId="DjangoTestsConfigurationType" />
     </history-entry>
-    <history-entry file="Test__account_tests_UserProfileUpdate_test_with_empty_informations - 2019.08.05 at 00h 39m 56s.xml">
-      <configuration name="Test: account.tests.UserProfileUpdate.test_with_empty_informations" configurationId="DjangoTestsConfigurationType" />
+    <history-entry file="Test__favourite_tests_FavouriteCreateList_test_add_favourite - 2019.08.05 at 15h 45m 12s.xml">
+      <configuration name="Test: favourite.tests.FavouriteCreateList.test_add_favourite" configurationId="DjangoTestsConfigurationType" />
     </history-entry>
-    <history-entry file="Test__account_tests_UserProfileUpdate_test_with_valid_informations - 2019.08.05 at 00h 40m 46s.xml">
-      <configuration name="Test: account.tests.UserProfileUpdate.test_with_valid_informations" configurationId="DjangoTestsConfigurationType" />
+    <history-entry file="Test__favourite_tests_FavouriteCreateList_test_user_fav - 2019.08.05 at 15h 45m 16s.xml">
+      <configuration name="Test: favourite.tests.FavouriteCreateList.test_user_fav" configurationId="DjangoTestsConfigurationType" />
     </history-entry>
-    <history-entry file="Test__account_tests_UserProfileUpdate_test_with_valid_informations - 2019.08.05 at 00h 40m 56s.xml">
-      <configuration name="Test: account.tests.UserProfileUpdate.test_with_valid_informations" configurationId="DjangoTestsConfigurationType" />
+    <history-entry file="Test__favourite_tests_FavouriteCreateList_test_user_fav - 2019.08.05 at 15h 45m 33s.xml">
+      <configuration name="Test: favourite.tests.FavouriteCreateList.test_user_fav" configurationId="DjangoTestsConfigurationType" />
     </history-entry>
-    <history-entry file="Test__account_tests_UserProfileUpdate_test_with_empty_informations - 2019.08.05 at 00h 41m 26s.xml">
-      <configuration name="Test: account.tests.UserProfileUpdate.test_with_empty_informations" configurationId="DjangoTestsConfigurationType" />
+    <history-entry file="Test__favourite_tests_FavouriteUpdateDelete_test_fav_delete - 2019.08.05 at 15h 56m 53s.xml">
+      <configuration name="Test: favourite.tests.FavouriteUpdateDelete.test_fav_delete" configurationId="DjangoTestsConfigurationType" />
     </history-entry>
-    <history-entry file="Test__account_tests_UserProfileUpdate_test_with_empty_informations - 2019.08.05 at 00h 41m 33s.xml">
-      <configuration name="Test: account.tests.UserProfileUpdate.test_with_empty_informations" configurationId="DjangoTestsConfigurationType" />
+    <history-entry file="Test__favourite_tests_FavouriteUpdateDelete_test_fav_delete - 2019.08.05 at 15h 59m 13s.xml">
+      <configuration name="Test: favourite.tests.FavouriteUpdateDelete.test_fav_delete" configurationId="DjangoTestsConfigurationType" />
     </history-entry>
-    <history-entry file="Test__favourite_tests_FavouriteCreateList - 2019.08.05 at 15h 36m 49s.xml">
-      <configuration name="Test: favourite.tests.FavouriteCreateList" configurationId="DjangoTestsConfigurationType" />
+    <history-entry file="Test__favourite_tests_FavouriteUpdateDelete_test_fav_update - 2019.08.05 at 16h 02m 02s.xml">
+      <configuration name="Test: favourite.tests.FavouriteUpdateDelete.test_fav_update" configurationId="DjangoTestsConfigurationType" />
     </history-entry>
-    <history-entry file="Test__favourite_tests_FavouriteCreateList_test_jwt_authentication - 2019.08.05 at 15h 37m 08s.xml">
-      <configuration name="Test: favourite.tests.FavouriteCreateList.test_jwt_authentication" configurationId="DjangoTestsConfigurationType" />
+    <history-entry file="Test__favourite_tests_FavouriteUpdateDelete_test_fav_update - 2019.08.05 at 16h 04m 22s.xml">
+      <configuration name="Test: favourite.tests.FavouriteUpdateDelete.test_fav_update" configurationId="DjangoTestsConfigurationType" />
     </history-entry>
-    <history-entry file="Test__favourite_tests_FavouriteCreateList - 2019.08.05 at 15h 37m 37s.xml">
-      <configuration name="Test: favourite.tests.FavouriteCreateList" configurationId="DjangoTestsConfigurationType" />
+    <history-entry file="Test__favourite_tests_FavouriteUpdateDelete - 2019.08.05 at 16h 07m 25s.xml">
+      <configuration name="Test: favourite.tests.FavouriteUpdateDelete" configurationId="DjangoTestsConfigurationType" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37322000" />
+    <option name="totallyTimeSpent" value="38707000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -406,9 +406,12 @@
     <SUITE FILE_PATH="coverage/blog$Test__favourite_tests_FavouriteCreateList_test_add_favourite.coverage" NAME="Test: favourite.tests.FavouriteCreateList.test_add_favourite Coverage Results" MODIFIED="1565009110118" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/blog$Test__account_tests_UserRegistrationTestCase_test_user_registration.coverage" NAME="Test: account.tests.UserRegistrationTestCase.test_user_registration Coverage Results" MODIFIED="1564951373094" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/blog$Test__account_tests_UserLogin_test_user_token.coverage" NAME="Test: account.tests.UserLogin.test_user_token Coverage Results" MODIFIED="1564952767953" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/blog$Test__favourite_tests_FavouriteUpdateDelete.coverage" NAME="Test: favourite.tests.FavouriteUpdateDelete Coverage Results" MODIFIED="1565010504878" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/blog$Test__favourite_tests_FavouriteUpdateDelete_test_fav_delete.coverage" NAME="Test: favourite.tests.FavouriteUpdateDelete.test_fav_delete Coverage Results" MODIFIED="1565009951229" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/blog$Test__account_tests_UserLogin.coverage" NAME="Test: account.tests.UserLogin Coverage Results" MODIFIED="1564953016467" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/blog$Test__account_tests_UserProfileUpdate.coverage" NAME="Test: account.tests.UserProfileUpdate Coverage Results" MODIFIED="1564954086197" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/blog$Test__account_tests_UserPasswordChange_test_is_authenticated_user.coverage" NAME="Test: account.tests.UserPasswordChange.test_is_authenticated_user Coverage Results" MODIFIED="1564953469600" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/blog$Test__favourite_tests_FavouriteUpdateDelete_test_fav_update.coverage" NAME="Test: favourite.tests.FavouriteUpdateDelete.test_fav_update Coverage Results" MODIFIED="1565010260280" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/blog$Test__account_tests_UserRegistrationTestCase_test_user_invalid_password.coverage" NAME="Test: account.tests.UserRegistrationTestCase.test_user_invalid_password Coverage Results" MODIFIED="1564951400101" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/blog$Test__account_tests_UserRegistrationTestCase_test_user_authenticated_token_registration.coverage" NAME="Test: account.tests.UserRegistrationTestCase.test_user_authenticated_token_registration Coverage Results" MODIFIED="1564952049216" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
@@ -708,8 +711,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/favourite/api/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="72" selection-start-line="7" selection-start-column="68" selection-end-line="7" selection-end-column="72" />
+        <state relative-caret-position="120">
+          <caret line="8" column="65" lean-forward="true" selection-start-line="8" selection-start-column="65" selection-end-line="8" selection-end-column="78" />
           <folding>
             <element signature="e#0#37#0" expanded="true" />
           </folding>
@@ -718,8 +721,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/favourite/tests.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="383">
-          <caret line="34" column="50" selection-start-line="34" selection-start-column="50" selection-end-line="34" selection-end-column="50" />
+        <state relative-caret-position="946">
+          <caret line="99" column="50" selection-start-line="99" selection-start-column="50" selection-end-line="99" selection-end-column="50" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
           </folding>
