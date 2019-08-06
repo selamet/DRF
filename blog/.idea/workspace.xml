@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="5d27ccfe-799e-47aa-a20a-9fb62a44e77e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/favourite/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/favourite/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/comment/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/comment/tests.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,24 +17,12 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/favourite/tests.py">
+        <entry file="file://$PROJECT_DIR$/comment/tests.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="946">
-              <caret line="99" column="50" selection-start-line="99" selection-start-column="50" selection-end-line="99" selection-end-column="50" />
+            <state relative-caret-position="218">
+              <caret line="92" column="49" selection-start-line="92" selection-start-column="49" selection-end-line="92" selection-end-column="49" />
               <folding>
-                <element signature="e#0#11#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/favourite/api/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="65" lean-forward="true" selection-start-line="8" selection-start-column="65" selection-end-line="8" selection-end-column="78" />
-              <folding>
-                <element signature="e#0#37#0" expanded="true" />
+                <element signature="e#0#43#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -92,11 +80,12 @@
         <option value="$PROJECT_DIR$/account/api/views.py" />
         <option value="$PROJECT_DIR$/account/tests.py" />
         <option value="$PROJECT_DIR$/favourite/tests.py" />
+        <option value="$PROJECT_DIR$/comment/tests.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="width" value="1280" />
+    <option name="width" value="634" />
     <option name="height" value="800" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -118,13 +107,7 @@
             <path>
               <item name="blog" type="b2602c69:ProjectViewProjectNode" />
               <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="favourite" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="blog" type="b2602c69:ProjectViewProjectNode" />
-              <item name="blog" type="462c0819:PsiDirectoryNode" />
-              <item name="favourite" type="462c0819:PsiDirectoryNode" />
-              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="comment" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -167,8 +150,8 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Django tests.Test: favourite.tests.FavouriteUpdateDelete">
-    <configuration name="Test: favourite.tests.FavouriteCreateList.test_add_favourite" type="DjangoTestsConfigurationType" temporary="true">
+  <component name="RunManager" selected="Django tests.Test: comment.tests.CommentUpdateDeleteTest">
+    <configuration name="Test: comment.tests.CommentCreate" type="DjangoTestsConfigurationType" temporary="true">
       <module name="blog" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -181,14 +164,14 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="TARGET" value="favourite.tests.FavouriteCreateList.test_add_favourite" />
+      <option name="TARGET" value="comment.tests.CommentCreate" />
       <option name="SETTINGS_FILE" value="" />
       <option name="CUSTOM_SETTINGS" value="false" />
       <option name="USE_OPTIONS" value="false" />
       <option name="OPTIONS" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Test: favourite.tests.FavouriteCreateList.test_user_fav" type="DjangoTestsConfigurationType" temporary="true">
+    <configuration name="Test: comment.tests.CommentUpdateDeleteTest" type="DjangoTestsConfigurationType" temporary="true">
       <module name="blog" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -201,7 +184,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="TARGET" value="favourite.tests.FavouriteCreateList.test_user_fav" />
+      <option name="TARGET" value="comment.tests.CommentUpdateDeleteTest" />
       <option name="SETTINGS_FILE" value="" />
       <option name="CUSTOM_SETTINGS" value="false" />
       <option name="USE_OPTIONS" value="false" />
@@ -293,11 +276,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Django tests.Test: comment.tests.CommentUpdateDeleteTest" />
+        <item itemvalue="Django tests.Test: comment.tests.CommentCreate" />
         <item itemvalue="Django tests.Test: favourite.tests.FavouriteUpdateDelete" />
         <item itemvalue="Django tests.Test: favourite.tests.FavouriteUpdateDelete.test_fav_update" />
         <item itemvalue="Django tests.Test: favourite.tests.FavouriteUpdateDelete.test_fav_delete" />
-        <item itemvalue="Django tests.Test: favourite.tests.FavouriteCreateList.test_user_fav" />
-        <item itemvalue="Django tests.Test: favourite.tests.FavouriteCreateList.test_add_favourite" />
       </list>
     </recent_temporary>
   </component>
@@ -320,17 +303,12 @@
       <workItem from="1564835436385" duration="3227000" />
       <workItem from="1564840047565" duration="4896000" />
       <workItem from="1564950701855" duration="4571000" />
-      <workItem from="1565007990184" duration="2363000" />
+      <workItem from="1565007990184" duration="2582000" />
+      <workItem from="1565103744493" duration="330000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Test__favourite_tests_FavouriteCreateList_test_add_favourite - 2019.08.05 at 15h 42m 56s.xml">
-      <configuration name="Test: favourite.tests.FavouriteCreateList.test_add_favourite" configurationId="DjangoTestsConfigurationType" />
-    </history-entry>
-    <history-entry file="Test__favourite_tests_FavouriteCreateList_test_add_favourite - 2019.08.05 at 15h 44m 12s.xml">
-      <configuration name="Test: favourite.tests.FavouriteCreateList.test_add_favourite" configurationId="DjangoTestsConfigurationType" />
-    </history-entry>
     <history-entry file="Test__favourite_tests_FavouriteCreateList_test_add_favourite - 2019.08.05 at 15h 45m 12s.xml">
       <configuration name="Test: favourite.tests.FavouriteCreateList.test_add_favourite" configurationId="DjangoTestsConfigurationType" />
     </history-entry>
@@ -355,15 +333,21 @@
     <history-entry file="Test__favourite_tests_FavouriteUpdateDelete - 2019.08.05 at 16h 07m 25s.xml">
       <configuration name="Test: favourite.tests.FavouriteUpdateDelete" configurationId="DjangoTestsConfigurationType" />
     </history-entry>
+    <history-entry file="Test__favourite_tests_FavouriteUpdateDelete - 2019.08.05 at 16h 08m 00s.xml">
+      <configuration name="Test: favourite.tests.FavouriteUpdateDelete" configurationId="DjangoTestsConfigurationType" />
+    </history-entry>
+    <history-entry file="Test__favourite_tests_FavouriteUpdateDelete - 2019.08.05 at 16h 08m 29s.xml">
+      <configuration name="Test: favourite.tests.FavouriteUpdateDelete" configurationId="DjangoTestsConfigurationType" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38707000" />
+    <option name="totallyTimeSpent" value="39256000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19951534" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20274636" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -377,7 +361,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50080776" side_tool="true" weight="0.3068493" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49919224" weight="0.27671233" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49919224" weight="0.27613103" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -390,12 +374,7 @@
     <option name="version" value="1" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/blog$Test__account_tests_UserRegistrationTestCase_test_unique_name.coverage" NAME="Test: account.tests.UserRegistrationTestCase.test_unique_name Coverage Results" MODIFIED="1564951481206" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/blog$Test__account_tests_UserPasswordChange_test_with_valid_imformations.coverage" NAME="Test: account.tests.UserPasswordChange.test_with_valid_imformations Coverage Results" MODIFIED="1564953845901" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/blog$Test__account_tests_UserProfileUpdate_test_with_empty_informations.coverage" NAME="Test: account.tests.UserProfileUpdate.test_with_empty_informations Coverage Results" MODIFIED="1564954891462" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/blog$Test__account_tests_UserPasswordChange_test_with_empty_imformations.coverage" NAME="Test: account.tests.UserPasswordChange.test_with_empty_imformations Coverage Results" MODIFIED="1564953950778" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/blog$Test__account_tests_UserLogin_test_user_empty_data.coverage" NAME="Test: account.tests.UserLogin.test_user_empty_data Coverage Results" MODIFIED="1564952881797" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/blog$Test__account_tests_UserRegistrationTestCase.coverage" NAME="Test: account.tests.UserRegistrationTestCase Coverage Results" MODIFIED="1564953010377" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/blog$Test__account_tests_UserPasswordChange_test_with_wrong_imformations.coverage" NAME="Test: account.tests.UserPasswordChange.test_with_wrong_imformations Coverage Results" MODIFIED="1564953910575" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/blog$Test__account_tests_UserProfileUpdate_test_with_valid_informations.coverage" NAME="Test: account.tests.UserProfileUpdate.test_with_valid_informations Coverage Results" MODIFIED="1564954854339" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/blog$Test__favourite_tests_FavouriteCreateList_test_jwt_authentication.coverage" NAME="Test: favourite.tests.FavouriteCreateList.test_jwt_authentication Coverage Results" MODIFIED="1565008627150" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
@@ -407,11 +386,18 @@
     <SUITE FILE_PATH="coverage/blog$Test__account_tests_UserRegistrationTestCase_test_user_registration.coverage" NAME="Test: account.tests.UserRegistrationTestCase.test_user_registration Coverage Results" MODIFIED="1564951373094" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/blog$Test__account_tests_UserLogin_test_user_token.coverage" NAME="Test: account.tests.UserLogin.test_user_token Coverage Results" MODIFIED="1564952767953" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/blog$Test__favourite_tests_FavouriteUpdateDelete.coverage" NAME="Test: favourite.tests.FavouriteUpdateDelete Coverage Results" MODIFIED="1565010504878" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/blog$Test__comment_tests_CommentUpdateDeleteTest.coverage" NAME="Test: comment.tests.CommentUpdateDeleteTest Coverage Results" MODIFIED="1565104067140" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/blog$Test__favourite_tests_FavouriteUpdateDelete_test_fav_update.coverage" NAME="Test: favourite.tests.FavouriteUpdateDelete.test_fav_update Coverage Results" MODIFIED="1565010260280" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/blog$Test__account_tests_UserRegistrationTestCase_test_unique_name.coverage" NAME="Test: account.tests.UserRegistrationTestCase.test_unique_name Coverage Results" MODIFIED="1564951481206" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/blog$Test__account_tests_UserProfileUpdate_test_with_empty_informations.coverage" NAME="Test: account.tests.UserProfileUpdate.test_with_empty_informations Coverage Results" MODIFIED="1564954891462" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/blog$Test__account_tests_UserPasswordChange_test_with_empty_imformations.coverage" NAME="Test: account.tests.UserPasswordChange.test_with_empty_imformations Coverage Results" MODIFIED="1564953950778" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/blog$Test__account_tests_UserLogin_test_user_empty_data.coverage" NAME="Test: account.tests.UserLogin.test_user_empty_data Coverage Results" MODIFIED="1564952881797" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/blog$Test__account_tests_UserRegistrationTestCase.coverage" NAME="Test: account.tests.UserRegistrationTestCase Coverage Results" MODIFIED="1564953010377" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/blog$Test__favourite_tests_FavouriteUpdateDelete_test_fav_delete.coverage" NAME="Test: favourite.tests.FavouriteUpdateDelete.test_fav_delete Coverage Results" MODIFIED="1565009951229" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/blog$Test__account_tests_UserLogin.coverage" NAME="Test: account.tests.UserLogin Coverage Results" MODIFIED="1564953016467" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/blog$Test__comment_tests_CommentCreate.coverage" NAME="Test: comment.tests.CommentCreate Coverage Results" MODIFIED="1565104002418" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/blog$Test__account_tests_UserProfileUpdate.coverage" NAME="Test: account.tests.UserProfileUpdate Coverage Results" MODIFIED="1564954086197" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/blog$Test__account_tests_UserPasswordChange_test_is_authenticated_user.coverage" NAME="Test: account.tests.UserPasswordChange.test_is_authenticated_user Coverage Results" MODIFIED="1564953469600" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
-    <SUITE FILE_PATH="coverage/blog$Test__favourite_tests_FavouriteUpdateDelete_test_fav_update.coverage" NAME="Test: favourite.tests.FavouriteUpdateDelete.test_fav_update Coverage Results" MODIFIED="1565010260280" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/blog$Test__account_tests_UserRegistrationTestCase_test_user_invalid_password.coverage" NAME="Test: account.tests.UserRegistrationTestCase.test_user_invalid_password Coverage Results" MODIFIED="1564951400101" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
     <SUITE FILE_PATH="coverage/blog$Test__account_tests_UserRegistrationTestCase_test_user_authenticated_token_registration.coverage" NAME="Test: account.tests.UserRegistrationTestCase.test_user_authenticated_token_registration Coverage Results" MODIFIED="1564952049216" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
@@ -709,22 +695,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/favourite/tests.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="387">
+          <caret line="94" column="24" selection-start-line="94" selection-start-column="24" selection-end-line="94" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/favourite/api/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
-          <caret line="8" column="65" lean-forward="true" selection-start-line="8" selection-start-column="65" selection-end-line="8" selection-end-column="78" />
+          <caret line="8" column="65" selection-start-line="8" selection-start-column="65" selection-end-line="8" selection-end-column="78" />
           <folding>
             <element signature="e#0#37#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/favourite/tests.py">
+    <entry file="file://$PROJECT_DIR$/comment/tests.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="946">
-          <caret line="99" column="50" selection-start-line="99" selection-start-column="50" selection-end-line="99" selection-end-column="50" />
+        <state relative-caret-position="218">
+          <caret line="92" column="49" selection-start-line="92" selection-start-column="49" selection-end-line="92" selection-end-column="49" />
           <folding>
-            <element signature="e#0#11#0" expanded="true" />
+            <element signature="e#0#43#0" expanded="true" />
           </folding>
         </state>
       </provider>
