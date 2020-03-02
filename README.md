@@ -91,6 +91,8 @@ class PostDetailAPIView(RetrieveAPIView):
 * DestroyAPIView --> Silme işlemi gerçekleştirir
 * UpdateAPIView --> Güncelleme işlemi gerçekleştirir.
 
+
+##### views.py
 ```python
 from rest_framework.generics import DestroyAPIView, UpdateAPIView,
 from post.api.serializers import PostSerializer
@@ -118,6 +120,8 @@ class PostUpdateCreateSeralizer(serializers.ModelSerializer):
 ```
 #### CreateAPIView:
 * perform_create --> create işlemi gerçekleşeceği zaman tetiklenir mail gönderme celery worker bu kısımdan gönderebiliriz.
+
+##### views.py
 ```python
 from  rest_framework.generics  import CreateAPIView
 from serializer import PostUpdateCreateSeralizer
@@ -140,6 +144,7 @@ class PostUpdateAPIView(UpdateAPIView):
 ####  RetrieveUpdateAPIView
 * update işleminde değerler fieldların içerisine yerleşmiş bir şekilde geriye döner.
 
+##### views.py
 ```python
 class PostUpdateAPIView(RetrieveUpdateAPIView):
 	queryset = Post.objects.all()
@@ -175,6 +180,7 @@ urlpatterns = [
 
  * permissions_classes --> Kullanıcı yetkileri burada ayarlarını.
 
+ ##### views.py
 ```python
 from  rest_framework.generics  import CreateAPIView
 from serializer import PostUpdateCreateSeralizer
@@ -204,6 +210,7 @@ class IsOwner(BasePermission):
 ```
 #### Custom Permissions Kullanımı :
 
+##### views.py
 ```python
 from  rest_framework.generics  import CreateAPIView
 from serializer import PostUpdateCreateSeralizer
@@ -224,6 +231,8 @@ class PostUpdateAPIView(RetrieveUpdateAPIView):
 
 * has_permission --> İlk önce koşul tanımaksızın burası çalışır. Post yapma olanağı tanımaz.
 * has_object_permission --> Delete methoduyla işlem yaptığımız zaman çalışır
+
+##### permissions.py
 ```python
 
 from rest_framework.permissions import BasePermission
@@ -245,6 +254,8 @@ class IsOwner(BasePermission):
 * update (self, instance, validate_date) --> update işlemi tetikler
 * validated_tittle(self, value) --> tittle a ait işlemleri burada gerçekleştiririz.
 * validated(self,attrs) --> tüm fieldlar üzerinde çalışır
+
+##### serializers.py
 ```python
 from rest_framework import serializers
 from post.models import Post
@@ -275,4 +286,85 @@ class PostUpdateCreateSeralizer(serializers.ModelSerializer):
 			attrs['title'] = 'gecersiz'
 			raise serializers.ValidationError('Bu değer girilemez.')
 		return attrs
+```
+
+
+### Search İşlemi && get_queryset(self):
+* get_queryset(self) --> Bu method ile filtreleme yapabiliriz
+* filter_backends -->  Kullanacağımız filtre yöntemi
+* search_fields --> neye gore arama yapacağımızı belirtiriz
+* OrderingFilter --> neye göre sıralayacağımızı belirtiriz
+	*  ....../api/post/list?search=Lorem&ordering=title
+
+##### views.py
+```python
+from  rest_framework.filters  import  SearchFilter, OrderingFilter
+
+class PostListAPIView(ListAPIView):
+	serializer_class = PostSerializer
+	filter_backends = [SearchFilter, OrderingFilter]
+	search_fields = ['title', 'content']
+
+	def get_queryset(self):
+		queryset = Post.objects.filter(draft=False)
+		return queryset
+```
+
+### Pagination
+
+##### paginations.py
+
+```python
+from rest_framework.pagination import PageNumberPagination
+
+class PostPagination(PageNumberPagination):
+	page_size = 2
+```
+##### views.py
+```python
+from  post.api.paginations  import  PostPagination
+
+class  PostListAPIView(ListAPIView):
+	...
+	pagination_class = PostPagination
+```
+
+### Hyperlinked Identity
+* slug yerine ana sayfada link döndürmemize olanak sağlar
+
+##### serializers.py
+```python
+from rest_framework import serializers
+from post.models import Post
+
+class  PostSerializer(serializers.ModelSerializer):
+	url = serializers.HyperlinkedIdentityField(
+	view_name='namespace:name',
+	lookup_field='slug'
+	)
+	class Meta:
+		model = Post
+		fields = ['username', 'title', 'content', 'url', 'created',]
+```
+
+### Serializer Method Field
+
+* Serializer kısmında gösterilen değer üzerinde değişiklik yapmaya olanak sağlar
+* obj --> serialize edilen obje
+* method_name --> method ismi girilmelidir
+* get_username --> method_name gerek kalmadan işlemleri gerçekleştirir.
+##### serializers.py	 
+```python
+from rest_framework import serializers
+from post.models import Post
+
+class  PostSerializer(serializers.ModelSerializer):
+	...
+	# username= serializers.SerializerMethodField(method_name='username_new')
+	username = serializers.SerializerMethodField()
+	...
+	def get_username(self, obj):
+		return str(obj.user.username)
+	def username_new(self, obj):
+		return str(obj.user.username)
 ```
