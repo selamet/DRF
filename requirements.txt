@@ -1,9 +1,9 @@
-Django==2.2.3
+Django==2.2.4
 django-filter==2.2.0
 djangorestframework==3.10.2
 djangorestframework-simplejwt==4.3.0
 Markdown==3.1.1
-Pillow==6.1.0
+Pillow==6.2.0
 PyJWT==1.7.1
 pytz==2019.1
 sqlparse==0.3.0
