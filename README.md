@@ -14,15 +14,15 @@ class Post(models.Model):
     title = models.CharField(max_length=120)
     content = models.TextField()
     draft = models.BooleanField(default=False)
-	created = models.DateTimeField(editable=False)
-	modified = models.DateTimeField()
-	slug = models.SlugField(unique=True, max_length=150, editable=False)
-
-	def save(self, *args, **kwargs):
-		if not self.id: ## idsi yoksa ilk defa oluşturuluyordur bu yüzden self.created
-			self.created = timezone.now()
-		self.modified = timezone.now()
-		return super(Post, self).save(*args, **kwargs)
+    created = models.DateTimeField(editable=False)
+    modified = models.DateTimeField()
+    slug = models.SlugField(unique=True, max_length=150, editable=False)
+    
+    def save(self, *args, **kwargs):
+    	if not self.id: ## idsi yoksa ilk defa oluşturuluyordur bu yüzden self.created
+	self.created = timezone.now()
+	self.modified = timezone.now()
+	return super(Post, self).save(*args, **kwargs)
 ```
 
 #### Normal Serializer:
