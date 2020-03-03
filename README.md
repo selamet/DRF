@@ -17,12 +17,13 @@ class Post(models.Model):
     created = models.DateTimeField(editable=False)
     modified = models.DateTimeField()
     slug = models.SlugField(unique=True, max_length=150, editable=False)
-    
+
     def save(self, *args, **kwargs):
-    	if not self.id: ## idsi yoksa ilk defa oluşturuluyordur bu yüzden self.created
-		self.created = timezone.now()
-	self.modified = timezone.now()
-	return super(Post, self).save(*args, **kwargs)
+        if not self.id:  ## idsi yoksa ilk defa oluşturuluyordur bu yüzden self.created
+            self.created = timezone.now()
+        self.modified = timezone.now()
+        return super(Post, self).save(*args, **kwargs)
+
 ```
 
 #### Normal Serializer:
@@ -46,12 +47,14 @@ class PostSerrializer(serializers.Serializer):
 from rest_framework import serializers
 from models import Post
 
+
 class PostSerrializer(serializers.ModelSerializer):
     class Meta:
         model = Post
         fields = [
             'title', 'content'
         ]
+
 ```
 
 ## Generic Views
@@ -64,6 +67,7 @@ class PostSerrializer(serializers.ModelSerializer):
 from rest_framework.generics import ListAPIView
 from models import Post
 from serializers import PostSerrializer
+
 
 class PostListAPIView(ListAPIView):
     queryset = Post.object.all()
@@ -81,10 +85,12 @@ from rest_framework.generics import RetrieveAPIView
 from models import Post
 from serializers import PostSerrializer
 
+
 class PostDetailAPIView(RetrieveAPIView):
-	queryset = Post.objects.all()
-	serializer_class = PostSerializer
-	lookup_field = 'slug'
+    queryset = Post.objects.all()
+    serializer_class = PostSerializer
+    lookup_field = 'slug'
+
 ```
 
 #### DestroyAPIView & UpdateAPIView
@@ -98,15 +104,17 @@ from rest_framework.generics import DestroyAPIView, UpdateAPIView,
 from post.api.serializers import PostSerializer
 from post.models import Post
 
+
 class PostDeleteAPIView(DestroyAPIView):
-	queryset = Post.objects.all()
-	serializer_class = PostSerializer
-	lookup_field = 'slug'
+    queryset = Post.objects.all()
+    serializer_class = PostSerializer
+    lookup_field = 'slug'
+
 
 class PostUpdateAPIView(UpdateAPIView):
-	queryset = Post.objects.all()
-	serializer_class = PostSerializer
-	lookup_field = 'slug'
+    queryset = Post.objects.all()
+    serializer_class = PostSerializer
+    lookup_field = 'slug'
 ```
 
  Serializere yeni bir serializer class'ı ekliyoruz
@@ -114,31 +122,36 @@ class PostUpdateAPIView(UpdateAPIView):
 
 ```python
 class PostUpdateCreateSeralizer(serializers.ModelSerializer):
-	class Meta:
-	model = Post
-	fields = ['title', 'content', 'image']
+    class Meta:
+
+        model = Post
+    fields = ['title', 'content', 'image']
+
 ```
 #### CreateAPIView:
 * perform_create --> create işlemi gerçekleşeceği zaman tetiklenir mail gönderme celery worker bu kısımdan gönderebiliriz.
 
 ##### views.py
 ```python
-from  rest_framework.generics  import CreateAPIView
+from rest_framework.generics import CreateAPIView
 from serializer import PostUpdateCreateSeralizer
-class PostCreateAPIView(CreateAPIView):
-	queryset = Post.objects.all()
-	serializer_class = PostUpdateCreateSeralizer
 
-	def perform_create(self, serializer):
-		serializer.save(user=self.request.user)
+
+class PostCreateAPIView(CreateAPIView):
+    queryset = Post.objects.all()
+    serializer_class = PostUpdateCreateSeralizer
+
+    def perform_create(self, serializer):
+        serializer.save(user=self.request.user)
+
 
 class PostUpdateAPIView(UpdateAPIView):
-	queryset = Post.objects.all()
-	serializer_class = PostUpdateCreateSeralizer
-	lookup_field = 'slug'
+    queryset = Post.objects.all()
+    serializer_class = PostUpdateCreateSeralizer
+    lookup_field = 'slug'
 
-	def perform_update(self,serializer):
-		...
+    def perform_update(self, serializer):
+	...
 ```
 
 ####  RetrieveUpdateAPIView
@@ -147,12 +160,13 @@ class PostUpdateAPIView(UpdateAPIView):
 ##### views.py
 ```python
 class PostUpdateAPIView(RetrieveUpdateAPIView):
-	queryset = Post.objects.all()
-	serializer_class = PostUpdateCreateSeralizer
-	lookup_field = 'slug'
+    queryset = Post.objects.all()
+    serializer_class = PostUpdateCreateSeralizer
+    lookup_field = 'slug'
 
-	def perform_update(self, serializer):
-		serializer.save(modified_by=self.request.user)
+    def perform_update(self, serializer):
+        serializer.save(modified_by=self.request.user)
+
 ```
 
 
@@ -168,12 +182,13 @@ from post.api.views import PostListAPIView, PostDetailAPIView, PostDeleteAPIView
 app_name = 'post'
 
 urlpatterns = [
-	path('list', PostListAPIView.as_view(), name='list'),
-	path('detail/<slug>', PostDetailAPIView.as_view(), name='detail'),
-	path('update/<slug>', PostUpdateAPIView.as_view(), name='update'),
-	path('delete/<slug>', PostDeleteAPIView.as_view(), name='delete'),
-	path('create', PostCreateAPIView.as_view(), name='create'),
+    path('list', PostListAPIView.as_view(), name='list'),
+    path('detail/<slug>', PostDetailAPIView.as_view(), name='detail'),
+    path('update/<slug>', PostUpdateAPIView.as_view(), name='update'),
+    path('delete/<slug>', PostDeleteAPIView.as_view(), name='delete'),
+    path('create', PostCreateAPIView.as_view(), name='create'),
 ]
+
 ```
 
 ## Kullanıcı Yetkileri :
@@ -182,17 +197,19 @@ urlpatterns = [
 
  ##### views.py
 ```python
-from  rest_framework.generics  import CreateAPIView
+from rest_framework.generics import CreateAPIView
 from serializer import PostUpdateCreateSeralizer
-from  rest_framework.permissions  import  IsAuthenticated
+from rest_framework.permissions import IsAuthenticated
+
 
 class PostCreateAPIView(CreateAPIView):
-	queryset = Post.objects.all()
-	serializer_class = PostUpdateCreateSeralizer
-	permission_classes  = [IsAuthenticated]
+    queryset = Post.objects.all()
+    serializer_class = PostUpdateCreateSeralizer
+    permission_classes = [IsAuthenticated]
 
-	def perform_create(self, serializer):
-		serializer.save(user=self.request.user)
+    def perform_create(self, serializer):
+        serializer.save(user=self.request.user)
+
 ```
 
 ### Custom Permissions :
@@ -203,28 +220,31 @@ class PostCreateAPIView(CreateAPIView):
 ```python
 from rest_framework.permissions import BasePermission
 
+
 class IsOwner(BasePermission):
-	message = "You must be the owner of this object."
-	def has_object_permission(self, request, view, obj):
-		return obj.user == request.user or request.user.is_superuser
+    message = "You must be the owner of this object."
+
+    def has_object_permission(self, request, view, obj):
+        return obj.user == request.user or request.user.is_superuser
 ```
 #### Custom Permissions Kullanımı :
 
 ##### views.py
 ```python
-from  rest_framework.generics  import CreateAPIView
+from rest_framework.generics import CreateAPIView
 from serializer import PostUpdateCreateSeralizer
-from  rest_framework.permissions  import  IsAuthenticated
+from rest_framework.permissions import IsAuthenticated
 from post.api.permissions import IsOwner
 
-class PostUpdateAPIView(RetrieveUpdateAPIView):
-	queryset = Post.objects.all()
-	serializer_class = PostUpdateCreateSeralizer
-	lookup_field = 'slug'
-	permission_classes  = [IsAuthenticated, IsOwner]
 
-	def perform_update(self, serializer):
-		serializer.save(modified_by=self.request.user)
+class PostUpdateAPIView(RetrieveUpdateAPIView):
+    queryset = Post.objects.all()
+    serializer_class = PostUpdateCreateSeralizer
+    lookup_field = 'slug'
+    permission_classes = [IsAuthenticated, IsOwner]
+
+    def perform_update(self, serializer):
+        serializer.save(modified_by=self.request.user)
 ```
 
 ### has_permission && has_object_permission
@@ -237,14 +257,16 @@ class PostUpdateAPIView(RetrieveUpdateAPIView):
 
 from rest_framework.permissions import BasePermission
 
+
 class IsOwner(BasePermission):
 
-	def has_permission(self, request, view):
-		return request.user and request.user.is_authenticated
-	message = "You must be the owner of this object."
+    def has_permission(self, request, view):
+        return request.user and request.user.is_authenticated
 
-	def has_object_permission(self, request, view, obj):
-		return obj.user == request.user or request.user.is_superuser
+    message = "You must be the owner of this object."
+
+    def has_object_permission(self, request, view, obj):
+        return obj.user == request.user or request.user.is_superuser
 ```
 
 ## Serializer Methodları:
@@ -261,31 +283,33 @@ from rest_framework import serializers
 from post.models import Post
 
 class PostUpdateCreateSeralizer(serializers.ModelSerializer):
-	class Meta:
-		model = Post
-		fields = ['title', 'content']
-	def create(self, validated_data):
-		title = validated_data['title]
-		##return validated_data
-		return Post.objects.create(user=self.context['request'].user, **validated_data)
+    class Meta:
+        model = Post
+        fields = ['title', 'content']
 
-	def update(self,instance,validated_data):
-		instance.title = validated_data.get('title',instance.title)
-		instance.title = 'edited'
-		instance.content = validated_data.get('content',instance.content)
-		instance.save()
-		return instance
+    def create(self, validated_data):
+        title = validated_data['title]
+        ##return validated_data
+        return Post.objects.create(user=self.context['request'].user, **validated_data)
 
-	def validate_title(self,value):
-		if value == 'deger'
-			raise serializers.ValidationError('Bu değer girilemez.')
-		return value
+    def update(self, instance, validated_data):
+        instance.title = validated_data.get('title', instance.title)
+        instance.title = 'edited'
+        instance.content = validated_data.get('content', instance.content)
+        instance.save()
+        return instance
 
-	def validate(self,attrs):
-		if attrs['title'] == 'deger':
-			attrs['title'] = 'gecersiz'
-			raise serializers.ValidationError('Bu değer girilemez.')
-		return attrs
+    def validate_title(self, value):
+        if value == 'deger'
+            raise serializers.ValidationError('Bu değer girilemez.')
+        return value
+
+    def validate(self, attrs):
+        if attrs['title'] == 'deger':
+            attrs['title'] = 'gecersiz'
+            raise serializers.ValidationError('Bu değer girilemez.')
+        return attrs
+
 ```
 
 
@@ -298,16 +322,17 @@ class PostUpdateCreateSeralizer(serializers.ModelSerializer):
 
 ##### views.py
 ```python
-from  rest_framework.filters  import  SearchFilter, OrderingFilter
+from rest_framework.filters import SearchFilter, OrderingFilter
+
 
 class PostListAPIView(ListAPIView):
-	serializer_class = PostSerializer
-	filter_backends = [SearchFilter, OrderingFilter]
-	search_fields = ['title', 'content']
+    serializer_class = PostSerializer
+    filter_backends = [SearchFilter, OrderingFilter]
+    search_fields = ['title', 'content']
 
-	def get_queryset(self):
-		queryset = Post.objects.filter(draft=False)
-		return queryset
+    def get_queryset(self):
+        queryset = Post.objects.filter(draft=False)
+        return queryset
 ```
 
 ### Pagination
@@ -317,16 +342,19 @@ class PostListAPIView(ListAPIView):
 ```python
 from rest_framework.pagination import PageNumberPagination
 
+
 class PostPagination(PageNumberPagination):
-	page_size = 2
+    page_size = 2
 ```
 ##### views.py
 ```python
-from  post.api.paginations  import  PostPagination
+from post.api.paginations import PostPagination
 
-class  PostListAPIView(ListAPIView):
-	...
-	pagination_class = PostPagination
+
+class PostListAPIView(ListAPIView):
+    ...
+    pagination_class = PostPagination
+
 ```
 
 ### Hyperlinked Identity
@@ -337,14 +365,16 @@ class  PostListAPIView(ListAPIView):
 from rest_framework import serializers
 from post.models import Post
 
-class  PostSerializer(serializers.ModelSerializer):
-	url = serializers.HyperlinkedIdentityField(
-	view_name='namespace:name',
-	lookup_field='slug'
-	)
-	class Meta:
-		model = Post
-		fields = ['username', 'title', 'content', 'url', 'created',]
+
+class PostSerializer(serializers.ModelSerializer):
+    url = serializers.HyperlinkedIdentityField(
+        view_name='namespace:name',
+        lookup_field='slug'
+    )
+
+    class Meta:
+        model = Post
+        fields = ['username', 'title', 'content', 'url', 'created', ]
 ```
 
 ### Serializer Method Field
@@ -358,13 +388,17 @@ class  PostSerializer(serializers.ModelSerializer):
 from rest_framework import serializers
 from post.models import Post
 
-class  PostSerializer(serializers.ModelSerializer):
-	...
-	# username= serializers.SerializerMethodField(method_name='username_new')
-	username = serializers.SerializerMethodField()
-	...
-	def get_username(self, obj):
-		return str(obj.user.username)
-	def username_new(self, obj):
-		return str(obj.user.username)
+
+class PostSerializer(serializers.ModelSerializer):
+    ...
+    # username= serializers.SerializerMethodField(method_name='username_new')
+    username = serializers.SerializerMethodField()
+    ...
+
+    def get_username(self, obj):
+        return str(obj.user.username)
+
+    def username_new(self, obj):
+        return str(obj.user.username)
+
 ```
