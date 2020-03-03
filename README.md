@@ -1,4 +1,5 @@
 
+
 ## DRF
 
 ### Bazı Önemli Kavramlar:
@@ -402,3 +403,103 @@ class PostSerializer(serializers.ModelSerializer):
         return str(obj.user.username)
 
 ```
+
+---
+
+## Comment Modülü:
+
+Yeni bir app oluşturup basit bir Model `comment` yapısı oluşturalım
+
+* def children() --> yorumun altındaki yorumları bulmamızı sağlayacak
+* def any_children() --> parent altında herhangi bir yorum olup olmadığını kontrol edicek
+##### models.py
+```python
+class Comment(models.Model):  
+    user = models.ForeignKey(User, on_delete=models.CASCADE)  
+    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='post')  
+    content = models.TextField()  
+    parent = models.ForeignKey('self', on_delete=models.CASCADE, null=True, blank=True, related_name='replies')  
+    created = models.DateTimeField(editable=False)  
+
+
+    def save(self, *args, **kwargs):  
+        if not self.id:  
+            self.created = timezone.now()  
+
+        self.modified = timezone.now()  
+        return super(Comment, self).save(*args, **kwargs)  
+
+    def children(self):  
+        return Comment.objects.filter(parent=self)  
+
+    @property  
+	def any_children(self):  
+        return Comment.objects.filter(parent=self).exists()
+```
+
+Serializer dosyamızı da oluşturalım
+* exclude --> girilen parametre hariç tüm fieldları listeler
+
+##### serializers.py
+```python
+from comment.models import Comment  
+
+
+class CommentCreateSerializer(ModelSerializer):  
+    class Meta:  
+        model = Comment  
+        exclude = ['created', ]
+
+  def validate(self, attrs):  
+        if (attrs["parent"]):  
+            if attrs['parent'].post != attrs['post']:  
+                raise serializers.ValidationError('Yanlış birşeyler var')  
+        return attrs
+```
+
+#### Comment Create View
+###### views.py
+
+```python
+class CommentCreateAPIView(CreateAPIView):  
+    queryset = Comment.objects.all()  
+    serializer_class = CommentCreateSerializer  
+
+    def perform_create(self, serializer):  
+        serializer.save(user=self.request.user)
+```
+
+
+#### İç içe yorum listeleme
+* fields = '__all__'   --> tüm fieldları listeler
+* get_replies --> datayı Serializer e gönderiyoruz daha sonra serialize edilmiş halini geriye döndürüyoruz. Bu şekilde yorumlar iç içe bir şekilde listelenme işlemi gerçekleştiriyor.
+
+##### serializers.py
+
+```python
+class CommentListSerializer(ModelSerializer):  
+    replies = SerializerMethodField()  
+    user = UserSerializer()  
+    post = PostCommentSerialize()  
+
+    class Meta:  
+        model = Comment  
+        fields = '__all__'  
+  # depth = 1 # Tüm verileri getirir  
+
+  def get_replies(self, obj):  
+        if obj.any_children:  
+            return CommentListSerializer(obj.children(), many=True).data
+
+```
+
+
+##### views.py
+
+```python
+class CommentListAPIView(ListAPIView):  
+    serializer_class = CommentListSerializer  
+
+    def get_queryset(self):  
+        return  Comment.objects.filter(parent=None)
+``` 
