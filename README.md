@@ -404,7 +404,7 @@ class PostSerializer(serializers.ModelSerializer):
 
 ```
 
----
+--- 
 
 ## Comment Modülü:
 
@@ -420,22 +420,22 @@ class Comment(models.Model):
     content = models.TextField()  
     parent = models.ForeignKey('self', on_delete=models.CASCADE, null=True, blank=True, related_name='replies')  
     created = models.DateTimeField(editable=False)  
-
-
+  
+  
     def save(self, *args, **kwargs):  
         if not self.id:  
             self.created = timezone.now()  
-
+  
         self.modified = timezone.now()  
         return super(Comment, self).save(*args, **kwargs)  
-
+  
     def children(self):  
         return Comment.objects.filter(parent=self)  
-
+  
     @property  
 	def any_children(self):  
         return Comment.objects.filter(parent=self).exists()
-```
+``` 
 
 Serializer dosyamızı da oluşturalım
 * exclude --> girilen parametre hariç tüm fieldları listeler
@@ -443,28 +443,28 @@ Serializer dosyamızı da oluşturalım
 ##### serializers.py
 ```python
 from comment.models import Comment  
-
-
+  
+  
 class CommentCreateSerializer(ModelSerializer):  
     class Meta:  
         model = Comment  
-        exclude = ['created', ]
-
+        exclude = ['created', ] 
+  
   def validate(self, attrs):  
         if (attrs["parent"]):  
             if attrs['parent'].post != attrs['post']:  
                 raise serializers.ValidationError('Yanlış birşeyler var')  
         return attrs
-```
+``` 
 
 #### Comment Create View
-###### views.py
+###### views.py 
 
 ```python
 class CommentCreateAPIView(CreateAPIView):  
     queryset = Comment.objects.all()  
     serializer_class = CommentCreateSerializer  
-
+  
     def perform_create(self, serializer):  
         serializer.save(user=self.request.user)
 ```
@@ -481,17 +481,17 @@ class CommentListSerializer(ModelSerializer):
     replies = SerializerMethodField()  
     user = UserSerializer()  
     post = PostCommentSerialize()  
-
+  
     class Meta:  
         model = Comment  
         fields = '__all__'  
   # depth = 1 # Tüm verileri getirir  
-
+  
   def get_replies(self, obj):  
         if obj.any_children:  
             return CommentListSerializer(obj.children(), many=True).data
 
-```
+``` 
 
 
 ##### views.py
@@ -499,7 +499,62 @@ class CommentListSerializer(ModelSerializer):
 ```python
 class CommentListAPIView(ListAPIView):  
     serializer_class = CommentListSerializer  
-
+  
     def get_queryset(self):  
         return  Comment.objects.filter(parent=None)
 ``` 
+
+### Posta özgü yorumlar 
+
+* Hem postu hemde posta
+* .......ap/comment/deneme?q=5
+* ?q= 5' I back ende yollarız.  Erişmek için: `self.request.GET.get("q")`
+* Bu şekilde 5 nolu id ye sahip olan yorumları döndürürüz.
+
+##### post.views.py
+
+```python
+class CommentListAPIView(ListAPIView):  
+    serializer_class = CommentListSerializer  
+    pagination_class = CommentPagination  
+  
+    def get_queryset(self):  
+        queryset = Comment.objects.filter(parent=None)  
+        query = self.request.GET.get("q")  
+        if query:  
+            queryset = Comment.objects.filter(post=query)  
+        return queryset
+```
+
+### İç İçe Serializer
+
+* depth = 1 --> ForeignKey le bağlı olan tüm verilerin içeriğini açar, parola dahil. 
+
+##### post.serializers.py
+```python
+class CommentListSerializer(ModelSerializer):  
+    replies = SerializerMethodField()  
+  
+    class Meta:  
+        model = Comment  
+        fields = '__all__'  
+    	depth = 1 
+```
+
+* Bir diğer yol, daha güvenli
+```python
+
+class UserSerializer(ModelSerializer):  
+    class Meta:  
+        model = User  
+        fields = ('last_name', 'first_name', 'id', 'email')
+
+class CommentListSerializer(ModelSerializer):  
+    replies = SerializerMethodField()  
+	user = UserSerializer()
+	
+    class Meta:  
+        model = Comment  
+        fields = '__all__'  
+    	
+```
