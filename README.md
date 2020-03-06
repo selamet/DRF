@@ -558,3 +558,26 @@ class CommentListSerializer(ModelSerializer):
         fields = '__all__'  
     	
 ```
+
+### Mixins
+
+* Yazdığımız viewların sadece kendi işlemini (delete, create gibi) değil extra olarak başka işleri de yapmamıza olanak sağlar.
+
+
+##### comment.views.py
+
+```python
+from rest_framework.mixins import DestroyModelMixin, UpdateModelMixin
+
+class CommentDeleteAPIView(DestroyAPIView, UpdateModelMixin, RetrieveModelMixin):  
+    queryset = Comment.objects.all()  
+    serializer_class = CommentDeleteUpdateSerializer  
+    lookup_field = 'pk'  
+	permission_classes = [IsOwner]  
+  
+    def put(self, request, *args, **kwargs):  
+        return self.update(request, *args, **kwargs)
+        
+    def delete(self, request, *args, **kwargs):  
+        get self.retrieve(request, *args, **kwargs)    
+``` 
