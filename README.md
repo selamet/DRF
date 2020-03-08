@@ -581,3 +581,175 @@ class CommentDeleteAPIView(DestroyAPIView, UpdateModelMixin, RetrieveModelMixin)
     def delete(self, request, *args, **kwargs):  
         get self.retrieve(request, *args, **kwargs)    
 ``` 
+
+## Üyelik İşlemleri
+
+* JWT kullanırız. JWT bir authorization token yöntemi. 
+* Bir linke istek yapalır ve bu linkin headerında bulunan authorization kısmına token yazılıp sunucuya gönderilir. 
+* access token --> Kısa ömürlü 5dk
+* refresh token --> 24 saat sürer 
+* refresh token sayesinde yeni access token alınır. Refresh token sunucuya gönderilir ve o bize yeni access token döndürür.
+* refresh token süresi son bulursa kullanıcının yeniden giriş yapması gerekir.
+* JWT üç kısımdan oluşur
+	```
+	xxxxx.yyyyy.zzzzz
+	header.payload.signature
+	
+	header = eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9 
+	payload = eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNTQzODI4NDMxLCJqdGkiOiI3ZjU5OTdiNzE1MGQ0NjU3OWRjMmI0OTE2NzA5N2U3YiIsInVzZXJfaWQiOjF9 
+	signature = Ju70kdcaHKn1Qaz8H42zrOYk0Jx9kIckTn9Xx7vhikY
+	```
+* signature `header` ve `payload` kısımlarının base64 le şifrelenmiş halini ve settings dosyasında bulunan `SECRET_KEY` 'den oluşuyor.
+
+* Kütüphaneyi kurmak için:
+	```
+	pip install djangorestframework_simplejwt
+	```
+##### settings.py
+
+```python
+REST_FRAMEWORK  =  {  'DEFAULT_AUTHENTICATION_CLASSES':  [
+  'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ],
+}
+```
+
+##### urls.py
+```python
+from  django.urls  import  path  from  rest_framework_simplejwt  import  views  as  jwt_views
+
+  urlpatterns  =  [  # Your URLs... 
+   path('api/token/',  jwt_views.TokenObtainPairView.as_view(),  name='token_obtain_pair'),
+   path('api/token/refresh/',  jwt_views.TokenRefreshView.as_view(),  name='token_refresh'),  
+   ]
+``` 
+
+* JWT Token süresini değiştirmek için
+
+##### settings.py
+
+```python
+SIMPLE_JWT ={
+	'ACCES_TOKEN_LIFETIME' : timedelta(minutes=15)
+}
+``` 
+
+
+## Signal Kullanımı 
+
+* receiver --> tetikleme kısmında rol alır.
+* @receiver(post_save, sender=User)  --> User modelinde herhangi bir post_save işlemi olursa bu kısım tetiklenecektir.
+
+```python
+from django.db.models.signals import post_save  
+from django.dispatch import receiver  
+  
+  
+class Profile(models.Model):  
+    user = models.OneToOneField(User, on_delete=models.CASCADE)  
+    note = models.CharField(max_length=200)  
+    twitter = models.CharField(max_length=200)  
+  
+    def __str__(self):  
+        return self.user.username  
+  
+  
+@receiver(post_save, sender=User)  
+def create_user_profile(sender, instance, created, **kwargs):  
+    if created:  
+        Profile.objects.create(user=instance)  
+    instance.profile.save()
+
+```  
+
+### Profile Update
+
+* validated_data.pop('profile') --> sadece profilin bulunduğu bilgileri çekeriz.
+* raise_exception=True --> hata varsa hatayı fırlatır
+* super(UserSerializer, self).update(instance, validated_data) --> Kullanıcı bilgilerini kayıt eder.
+#####  account.seriarlizers.py
+```python
+
+class ProfileSerializer(ModelSerializer):  
+    class Meta:  
+        model = Profile  
+        fields = ('id', 'note', 'twitter')  
+  
+  
+class UserSerializer(ModelSerializer):  
+    profile = ProfileSerializer()  
+  
+    class Meta:  
+        model = User  
+        fields = ('id', 'first_name', 'last_name', 'profile')  
+  
+    def update(self, instance, validated_data):  
+        profile = validated_data.pop('profile')  
+        profile_serializer = ProfileSerializer(instance=instance.profile, data=profile)  
+        profile_serializer.is_valid(raise_exception=True)  
+        profile_serializer.save()  
+        return super(UserSerializer, self).update(instance, validated_data)
+```
+
+
+##### account.views.py
+
+```python
+class ProfileView(RetrieveUpdateAPIView):  
+    permission_classes = (IsAuthenticated,)  
+    serializer_class = UserSerializer  
+    queryset = User.objects.all()  
+  
+    def get_object(self):  
+        queryset = self.get_queryset()  
+        obj = get_object_or_404(queryset, id=self.request.user.id)  
+        return obj  
+  
+    def perform_update(self, serializer):  
+        serializer.save(user=self.request.user)
+
+```
+
+### Password Chance:
+
+* validate_password --> girilen parolanın güçlü olup olmadığını kontrol eder.
+##### account.serializers.py
+
+```python
+class ChangePasswordSerializer(Serializer):  
+    old_password = serializers.CharField(required=True)  
+    new_password = serializers.CharField(required=True)  
+  
+    def validate_new_password(self, value):  
+        validate_password(value)  
+        return value
+``` 
+ ##### account.views.py
+
+* get_object --> giriş yapan kullanıcıyı geriye döndürür.
+* put --> update işleminde tetiklenir.
+* self.object.check_password(old_password) --> eski parola doğru mu?
+* update_session_auth_hash(request, self.object) --> login işlemi gerçekleştirir.
+```python
+class UpdatePassword(APIView):  
+    permission_classes = (IsAuthenticated,)  
+  
+    def get_object(self):  
+        return self.request.user  
+  
+    def put(self, request, *args, **kwargs):  
+        self.object = self.get_object()  
+  
+        serializer = ChangePasswordSerializer(data=request.data)  
+        if serializer.is_valid():  
+            old_password = serializer.data.get('old_password')  
+            if not self.object.check_password(old_password):  
+                return Response({'old_password': 'wrong_password'}, status=status.HTTP_400_BAD_REQUEST)  
+  
+            self.object.set_password(serializer.data.get('new_password'))  
+            self.object.save()  
+            update_session_auth_hash(request, self.object)
+		    return Response(status=status.HTTP_204_NO_CONTENT)  
+  
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+```
