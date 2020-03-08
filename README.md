@@ -749,7 +749,7 @@ class UpdatePassword(APIView):
             self.object.set_password(serializer.data.get('new_password'))  
             self.object.save()  
             update_session_auth_hash(request, self.object)
-		    return Response(status=status.HTTP_204_NO_CONTENT)  
+	    return Response(status=status.HTTP_204_NO_CONTENT)  
   
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 ```
